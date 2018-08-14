@@ -12,13 +12,13 @@ Worth through the stages below in your teams, and if you have any questions Alex
 
 [01 – Getting set up](./01-getting-set-up.md)
 
-[02 – Running a job](./01-getting-set-up.md)
+[02 – Running a job](./02-running-a-job.md)
 
-[03 – Building and deploying a docker image](./01-getting-set-up.md)
+[03 – Service discovery](./03-service-discovery.md)
 
-[04 – Creating a cluster](./01-getting-set-up.md)
+[04 – Configuration management](./04-configuration-management.md)
 
-[05 – Exposing services](./01-getting-set-up.md)
+TODO [04 – Creating a cluster](./01-getting-set-up.md)
 
-[06 – Service discovery](./01-getting-set-up.md)
+TODO [06 – Putting it all together](./01-getting-set-up.md)
 

@@ -2,7 +2,7 @@
 
 We'll start by getting the Hashicorp stack set up on your machine. We'll be using one machine for each team, so you don't have to set this up on all of them.
 
-# Install the Hashicorp stack
+## Installing the Hashicorp stack
 
 The key components that we'll be using are [Nomad](https://nomadproject.io) and [Consul](https://consul.io).
 
@@ -30,7 +30,7 @@ unzip /tmp/nomad.zip -d /usr/local/bin && unzip /tmp/consul.zip -d /usr/local/bi
 
 Then you can check that everything installed okay:
 
-```bash
+```
 → nomad version && consul version
 Nomad v0.8.4 (dbee1d7d051619e90a809c23cf7e55750900742a)
 Consul v1.2.2
@@ -40,7 +40,7 @@ Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use p
 That's all we need to get the Hashicorp compoonents installed!
 
 
-# Installing Docker
+## Installing Docker
 
 Nomad is capable of running a variety of different kinds of jobs. It can run an executable file that's installed on a machine, spin up virtual machines to run each job, or even use QEMU to run binaries for different architectures.
 
@@ -52,7 +52,7 @@ To install it on Linux, you'll have to refer to your distribution's instructions
 
 Check that it's installed okay:
 
-```bash
+```
 → docker version
 Client:
  Version:      18.03.1-ce
@@ -78,7 +78,7 @@ Server:
 You should see some output roughly simiar to the above, but you don't neesd to worry about the language too much!
 
 
-# Running the Hashicorp stack
+## Running the Hashicorp stack
 
 Okay, so now we've got the Hashicorp stack installed. Let's run a cluster!
 
