@@ -52,6 +52,17 @@ job "hello-world" {
       env {
         "PORT" = "${NOMAD_PORT_http}"
       }
+
+      service {
+        name = "hello-world"
+        port = "http"
+        check {
+          type     = "http"
+          path     = "/ping"
+          interval = "10s"
+          timeout  = "2s"
+        }
+      }
     }
   }
 }
