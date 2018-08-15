@@ -28,6 +28,13 @@ curl https://releases.hashicorp.com/consul/1.2.2/consul_1.2.2_linux_amd64.zip -o
 unzip /tmp/nomad.zip -d /usr/local/bin && unzip /tmp/consul.zip -d /usr/local/bin
 ```
 
+On Linux you'll want to also make sure that the `/usr/local/bin` path is in your shell's PATH variable and add it if it is not:
+```bash
+# echo $PATH
+/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+# export PATH=$PATH:/usr/local/bin
+```
+
 Then you can check that everything installed okay:
 
 ```
