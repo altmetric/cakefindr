@@ -49,8 +49,13 @@ job "hello-world" {
       // environment variable called PORT. We can use the "env" stanza to define
       // this environment variable – Nomad allows us to use string interpolation
       // to access the port number that it has chosen to use for this task.
-      env {
-        "PORT" = "${NOMAD_PORT_http}"
+      template {
+        data = <<EOH
+      PORT={{ env "NOMAD_PORT_http" }}
+      RESPONSE_TEXT="{{ key "config/response_text" }} - {{ env "NOMAD_ALLOC_ID" }}"
+      EOH
+        destination = "local/env"
+        env         = true
       }
 
       service {

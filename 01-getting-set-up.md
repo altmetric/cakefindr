@@ -95,7 +95,7 @@ Consul should start in the forground and output logging messages with useful deb
 Next we can run Nomad in a new terminal:
 
 ```bash
-nomad agent -dev
+nomad agent -client -server -data-dir=/tmp --bootstrap-expect=1
 ```
 
 Nomad will also output some debugging information.

@@ -18,7 +18,7 @@ Worth through the stages below in your teams, and if you have any questions Alex
 
 [04 – Configuration management](./04-configuration-management.md)
 
-TODO [04 – Creating a cluster](./01-getting-set-up.md)
+[05 – Joining a cluster](./05-joining-a-cluster.md)
 
-TODO [06 – Putting it all together](./01-getting-set-up.md)
+[06 – The cake is not a lie](./06-the-cake-is-not-a-lie.md)
 

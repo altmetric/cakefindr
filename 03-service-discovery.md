@@ -19,10 +19,10 @@ We can use the DNS API to query Consul for more details about the location of se
 
 ```
 → dig +noall +answer nomad.service.consul @127.0.0.1 -p 8600
-nomad.service.consul. 0 IN  A 127.0.0.1
+nomad.service.consul. 0 IN  A 10.0.0.21
 
 → dig +noall +answer consul.service.consul @127.0.0.1 -p 8600
-consul.service.consul.  0 IN  A 127.0.0.1
+consul.service.consul.  0 IN  A 10.0.0.21
 ```
 
 Okay, that's not too surprising. Consul and Nomad are both running on your local machine, so they resolve to `127.0.0.1`. But we don't know what port they're on!
@@ -33,19 +33,42 @@ We can ask `dig` to retrieve `SRV` records using the `srv` flag:
 
 ```
 → dig srv +noall +answer nomad.service.consul @127.0.0.1 -p 8600
-nomad.service.consul. 0 IN  SRV 1 1 4646 Macbook-Pro.local.node.dc1.consul.
-nomad.service.consul. 0 IN  SRV 1 1 4647 Macbook-Pro.local.node.dc1.consul.
-nomad.service.consul. 0 IN  SRV 1 1 4648 Macbook-Pro.local.node.dc1.consul.
+nomad.service.consul. 0 IN  SRV 1 1 4646 0a000015.addr.dc1.consul.
+nomad.service.consul. 0 IN  SRV 1 1 4647 0a000015.addr.dc1.consul.
+nomad.service.consul. 0 IN  SRV 1 1 4648 0a000015.addr.dc1.consul.
 ```
 
 Okay, that's already looking more useful. We can see that the Nomad service in Consul has three ports registered for the different network services it provides. The HTTP one is probably most useful for us, so we can ask Consul for those details:
 
 ```
 → dig srv +noall +answer http.nomad.service.consul @127.0.0.1 -p 8600
-http.nomad.service.consul. 0  IN  SRV 1 1 4646 Macbook-Pro.local.node.dc1.consul.
+http.nomad.service.consul. 0  IN  SRV 1 1 4646 0a000015.addr.dc1.consul.
 ```
 
-Even better. Now we know where to access the HTTP endpoint for Nomad. But what about our own services?
+Even better. Now we know where to access the HTTP endpoint for Nomad.
+
+Let's make it a bit easier to use by configuring the machine to use Consul for all name resolution when a domain ends in `.consul`!
+
+On a Mac, we can run this command:
+
+```
+sudo mkdir -p /etc/resolver && sudo tee /etc/resolver/consul > /dev/null <<EOF
+nameserver 127.0.0.1
+port 8600
+EOF
+```
+
+> Requirements on Linux might be different depending on your distribution!
+
+We should immediately be able to ping services using their Consul name:
+
+```
+→ ping http.nomad.service.consul
+PING http.nomad.service.consul (10.0.0.21): 56 data bytes
+64 bytes from 10.0.0.21: icmp_seq=0 ttl=64 time=0.057 ms
+```
+
+Now we can access services that are registered in Consul. But how do we make our own services appear?
 
 ## Registering a service
 
@@ -86,11 +109,11 @@ We can also query the Consul DNS API for details:
 
 ```
 → dig srv +noall +answer hello-world.service.consul @127.0.0.1 -p 8600
-hello-world.service.consul. 0 IN  SRV 1 1 23326 Macbook-Pro.local.node.dc1.consul.
-hello-world.service.consul. 0 IN  SRV 1 1 26036 Macbook-Pro.local.node.dc1.consul.
-hello-world.service.consul. 0 IN  SRV 1 1 26706 Macbook-Pro.local.node.dc1.consul.
-hello-world.service.consul. 0 IN  SRV 1 1 27903 Macbook-Pro.local.node.dc1.consul.
-hello-world.service.consul. 0 IN  SRV 1 1 21984 Macbook-Pro.local.node.dc1.consul.
+hello-world.service.consul. 0 IN  SRV 1 1 23326 0a000015.addr.dc1.consul.
+hello-world.service.consul. 0 IN  SRV 1 1 26036 0a000015.addr.dc1.consul.
+hello-world.service.consul. 0 IN  SRV 1 1 26706 0a000015.addr.dc1.consul.
+hello-world.service.consul. 0 IN  SRV 1 1 27903 0a000015.addr.dc1.consul.
+hello-world.service.consul. 0 IN  SRV 1 1 21984 0a000015.addr.dc1.consul.
 ```
 
 So now we know where to find all of our allocations, just by using the DNS API. They'll also be visible in the [Consul UI](http://localhost:8500/ui/dc1/services/hello-world).

@@ -172,7 +172,7 @@ Modified            = 8m47s ago
 Task "server" is "running"
 Task Resources
 CPU        Memory           Disk     IOPS  Addresses
-0/100 MHz  824 KiB/300 MiB  300 MiB  0     http: 127.0.0.1:31721
+0/100 MHz  824 KiB/300 MiB  300 MiB  0     http: 10.0.0.21:31721
 
 Task Events:
 Started At     = 2018-08-14T21:44:59Z
@@ -191,7 +191,7 @@ Time                       Type        Description
 This command describes the individual allocation in detail, including the details of the resources it is using. Have a look at the output of your own `nomad status` command, and you'll see the `Task Resources` section tells us the port that Nomad has selected for this application. We can use this information to access the application that we're running:
 
 ```
-→ curl 127.0.0.1:31721
+→ curl 10.0.0.21:31721
 Hello world!
 ```
 
