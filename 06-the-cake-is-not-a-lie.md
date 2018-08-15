@@ -32,4 +32,4 @@ Team Four will be running the application `altmetric/cakefindr-ui`. This applica
 
 ## The Cake 🍰
 
-Follow the details in the linked pages above – and when we all sucessfully deploy our applications to our shared Nomad cluster, Team Aleph should be able to decode and display the secret location!
+Follow the details in the linked pages above – and when we all sucessfully deploy our applications to our shared Nomad cluster, Team Four should be able to decode and display the secret location!
