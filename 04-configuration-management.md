@@ -93,7 +93,7 @@ hello-world-frontend.service.consul. 0 IN SRV 1 1 20172 0a000015.addr.dc1.consul
 We can then access our new front-end service using this address:
 
 ```
-→ curl 0a000015.addr.dc1.consul.:20172
+→ curl 0a000015.addr.dc1.consul:20172
 Hello world!
 ```
 
