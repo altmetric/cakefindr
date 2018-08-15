@@ -55,7 +55,7 @@ To keep things nice and clean and isolated, we will be using the Docker driver. 
 
 To install Docker on a Mac, grab the image from [https://download.docker.com/mac/stable/Docker.dmg](https://download.docker.com/mac/stable/Docker.dmg).
 
-To install it on Linux, you'll have to refer to your distribution's instructions ([https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository] (Ubuntu guide))
+To install it on Linux, you'll have to refer to your distribution's instructions ([Ubuntu guide](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository))
 
 Check that it's installed okay:
 
