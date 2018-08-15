@@ -91,13 +91,13 @@ Okay, so now we've got the Hashicorp stack installed. Let's run a cluster!
 
 We'll start a Consul agent first. We'll be running it in development mode, which automates some settings that we don't have to worry about for now.
 
-You can start Consul in the forground using the following command:
+You can start Consul in the foreground using the following command:
 
 ```bash
 consul agent --data-dir=/tmp/consul -dev
 ```
 
-Consul should start in the forground and output logging messages with useful debugging information if anything goes wrong.
+Consul should start in the foreground and output logging messages with useful debugging information if anything goes wrong.
 
 Next we can run Nomad in a new terminal:
 
