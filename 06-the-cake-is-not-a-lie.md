@@ -12,23 +12,23 @@ Team One will be running the application `altmetric/cakefindr-keyserver-1`. This
 
 [More details](./06-the-cake-is-not-a-lie-team-one.md)
 
-### Team A (Jonathan & Måel)
+### Team Two (Jonathan & Måel)
 
-Team A will be running the application `altmetric/cakefindr-keyserver-2`. This application needs to serve one of the secret keys used to decode the secret location.
+Team Two will be running the application `altmetric/cakefindr-keyserver-2`. This application needs to serve one of the secret keys used to decode the secret location.
 
-[More details](./06-the-cake-is-not-a-lie-team-a.md)
+[More details](./06-the-cake-is-not-a-lie-team-two.md)
 
-### Team Alpha (Gio & Shane)
+### Team Three (Gio & Shane)
 
-Team Alpha will be running the application `altmetric/cakefindr-keyserver-3`. This application needs to serve one of the secret keys used to decode the secret location.
+Team Three will be running the application `altmetric/cakefindr-keyserver-3`. This application needs to serve one of the secret keys used to decode the secret location.
 
-[More details](./06-the-cake-is-not-a-lie-team-alpha.md)
+[More details](./06-the-cake-is-not-a-lie-team-three.md)
 
-### Team Aleph (Paul & Maciej)
+### Team Four (Paul & Maciej)
 
-Team Aleph will be running the application `altmetric/cakefindr-ui`. This application needs to access data from the three keyservers to decode it's insternal payload containing the secret location.
+Team Four will be running the application `altmetric/cakefindr-ui`. This application needs to access data from the three keyservers to decode it's insternal payload containing the secret location.
 
-[More details](./06-the-cake-is-not-a-lie-team-aleph.md)
+[More details](./06-the-cake-is-not-a-lie-team-four.md)
 
 ## The Cake 🍰
 
