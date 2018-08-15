@@ -58,7 +58,35 @@ port 8600
 EOF
 ```
 
-> Requirements on Linux might be different depending on your distribution!
+> Requirements on Linux might be different depending on your distribution! 
+
+On Ubuntu Linux we can do:
+```
+sudo apt install bind9
+sudo echo "include \"/etc/bind/consul.conf\";" >> /etc/bind/named.conf
+sudo tee /etc/bind/consul.conf > /dev/null <<EOF
+zone "consul" IN {
+  type forward;
+  forward only;
+  forwarders { 127.0.0.1 port 8600; };
+};
+EOF
+sudo tee /etc/bind/named.conf.options > /dev/null <<EOF
+options {
+  directory "/var/cache/bind";
+
+  dnssec-enable no;
+  dnssec-validation no;
+
+  auth-nxdomain no;    # conform to RFC1035
+  listen-on-v6 { ::1; };
+  listen-on { 172.17.0.1; 127.0.0.1; };
+  recursion yes;
+  allow-recursion { 172.17.0.0/16; 127.0.0.1; ::1; };
+};
+EOF
+sudo systemctl restart bind9
+```
 
 We should immediately be able to ping services using their Consul name:
 
