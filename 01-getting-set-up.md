@@ -20,7 +20,7 @@ curl https://releases.hashicorp.com/consul/1.2.2/consul_1.2.2_darwin_amd64.zip -
 unzip /tmp/nomad.zip -d /usr/local/bin && unzip /tmp/consul.zip -d /usr/local/bin
 ```
 
-If you're on Linux, the script should be roughly the same with different binaries, but you might have to tweak it depending on your distribution:
+If you're on Linux, the script should be roughly the same with different binaries, but you might have to tweak it depending on your distribution - all the commands need to be run as root:
 
 ```bash
 curl https://releases.hashicorp.com/nomad/0.8.4/nomad_0.8.4_linux_amd64.zip -o /tmp/nomad.zip && 
