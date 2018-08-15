@@ -16,7 +16,7 @@ Create a file called `hello-world.hcl` with the following content, and have a lo
 
 // The top level of every job file is the "job" stanza. This defines the name
 // of the job as it will appear in Nomad, Consul, and to other applications.
-// This has to be a DNS-friendly name, so you can use letter, numnbers, and
+// This has to be a DNS-friendly name, so you can use letter, numbers, and
 // hyphens only.
 job "hello-world" {
 
