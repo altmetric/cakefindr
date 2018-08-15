@@ -166,4 +166,4 @@ _It might be worth trying to see if you can include some information in the `RES
 
 ## Next steps
 
-Now we've figured out how to run applications on our local cluster and have them talk to each other. 
+Now we've figured out how to run applications on our local cluster and have them talk to each other. Now let's [build a larger cluster!](./05-joining-a-cluster.md)

@@ -82,12 +82,12 @@ You should see some output roughly simiar to the above, but you don't neesd to w
 
 Okay, so now we've got the Hashicorp stack installed. Let's run a cluster!
 
-We'll start a Consul agent first. We'll be running it in development mode, which means the agent you run will be both a 'server' and a 'client' – the distinction isn't too important for the moment.
+We'll start a Consul agent first. We'll be running it in development mode, which automates some settings that we don't have to worry about for now.
 
 You can start Consul in the forground using the following command:
 
 ```bash
-consul agent --data-dir=/tmp -dev
+consul agent --data-dir=/tmp/consul -dev
 ```
 
 Consul should start in the forground and output logging messages with useful debugging information if anything goes wrong.
@@ -95,10 +95,12 @@ Consul should start in the forground and output logging messages with useful deb
 Next we can run Nomad in a new terminal:
 
 ```bash
-nomad agent -client -server -data-dir=/tmp --bootstrap-expect=1
+nomad agent -client -server -data-dir=/tmp/nomad --bootstrap-expect=1
 ```
 
 Nomad will also output some debugging information.
+
+_We are running Nomad here as both a client and a server. In a production deployment, clients and servers are usually separate – the server is responsible for coordinating the cluster but doesn't actually run any jobs, while the client doesn't do any cluster management and just runs jobs. In development the distinction isn't important._
 
 If everything worked as expected you should now be able to access UIs for Nomad and Consul on your local machine using these links:
 
