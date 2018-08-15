@@ -1,4 +1,4 @@
-# 06 – 🍰 The Cake Is Not A Lie 🍰
+# 06 – The Cake Is Not A Lie 🍰
 
 Now we've learned how to build a Nomad and Consul cluster, run and configure jobs, and join a larger cluster. It's time to implement a distributed application that will help us find some cake.
 
