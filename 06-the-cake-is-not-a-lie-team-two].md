@@ -1,4 +1,4 @@
-# 06 – The Cake Is Not A Lie – Team Two (Jonathan & Måel)
+# 06 – The Cake Is Not A Lie – Team Two (Jonathan & Mäel)
 
 Your team's job is to run the application in the Docker image `altmetric/cakefindr-keyserver-2`. This is an application that can provide part of the secret key required to decrypt the location of the cake in the UI.
 

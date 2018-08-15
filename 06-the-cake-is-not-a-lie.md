@@ -12,7 +12,7 @@ Team One will be running the application `altmetric/cakefindr-keyserver-1`. This
 
 [More details](./06-the-cake-is-not-a-lie-team-one.md)
 
-### Team Two (Jonathan & Måel)
+### Team Two (Jonathan & Mäel)
 
 Team Two will be running the application `altmetric/cakefindr-keyserver-2`. This application needs to serve one of the secret keys used to decode the secret location.
 
