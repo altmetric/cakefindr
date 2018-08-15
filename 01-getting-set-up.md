@@ -8,7 +8,7 @@ The key components that we'll be using are [Nomad](https://nomadproject.io) and 
 
 Nomad is an application scheduling tool which allows "jobs" to be submitted for execution on a cluster of machines, and handles things like running multiple instances and recovering without downtime if a machine fails.
 
-Consul is a service discovery, configuration management and service mesh tool. Nomad uses Consul to allow applications to find other applications and services that are running in the cluster. Applications can use Consul to store configuration information and find other applications on the cluster.
+Consul is a service discovery, configuration management and service mesh tool. Nomad uses Consul to allow applications to find other applications and services that are running in the cluster.
 
 They're both distributed as single binaries, so they're pretty straightforward to install.
 
@@ -75,7 +75,7 @@ Server:
   Experimental: true
 ```
 
-You should see some output roughly simiar to the above, but you don't neesd to worry about the language too much!
+You should see some output roughly simiar to the above, but you don't neesd to worry about the version too much!
 
 
 ## Running the Hashicorp stack
