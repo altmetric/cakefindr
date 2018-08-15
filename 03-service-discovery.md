@@ -25,7 +25,7 @@ nomad.service.consul. 0 IN  A 10.0.0.21
 consul.service.consul.  0 IN  A 10.0.0.21
 ```
 
-Okay, that's not too surprising. Consul and Nomad are both running on your local machine, so they resolve to `127.0.0.1`. But we don't know what port they're on!
+Okay, that's not too surprising. Consul and Nomad are both running on your local machine, so they resolve to your local IP. But we don't know what port they're on!
 
 Fortunately, Consul supports [DNS SRV records](https://en.wikipedia.org/wiki/SRV_record) – these are special DNS records that can include additional information about resolved names. Importantly, this includes the port that they're running on!
 
